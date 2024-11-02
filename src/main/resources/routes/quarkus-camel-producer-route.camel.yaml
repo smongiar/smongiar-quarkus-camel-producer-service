@@ -1,0 +1,18 @@
+- rest:
+    openApi:
+      missingOperation: mock
+      specification: api-registry/csb-server-api.json
+- route:
+    id: route-endpoint-4325
+    description: Route /path
+    from:
+      uri: direct:operationIdUpdateMe
+      parameters: {}
+      steps:
+        - unmarshal:
+            json:
+              library: Jackson
+        - log:
+            message: "${body}"
+        - setBody:
+            simple: '{"received": true }'

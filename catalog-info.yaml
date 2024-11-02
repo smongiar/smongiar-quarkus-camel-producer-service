@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "quarkus-camel-producer"
+  description: "Quarkus rest producer"
+  tags:
+    - java
+  links:
+    - url: https://devspaces.apps.cluster-example.com/?storageType=per-workspace#https://github.com/smongiar/smongiar-quarkus-camel-producer-service
+      title: OpenShift Dev Spaces
+      icon: web
+    - url: https://hawtio-online.apps.cluster-example.com/online/discover?namespace=system=smongiar
+      title: HawtIO
+      icon: web
+  annotations:
+    github.com/project-slug: "smongiar/smongiar-quarkus-camel-producer-service"
+    backstage.io/kubernetes-id: "quarkus-camel-producer"
+    backstage.io/kubernetes-label-selector: "system=smongiar"
+    janus-idp.io/tekton : "quarkus-camel-producer-service"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "group:default/backstage-admins"
+  system: system:default/smongiar
+  providesApis: 
+    - csb-server
